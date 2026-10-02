@@ -79,6 +79,20 @@
   .svc .tx{flex:none;color:var(--muted);font-size:13px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;padding-top:4px}
   .menunote{margin-top:26px;font-size:14px;color:var(--muted);font-style:italic}
   @media(max-width:700px){.svcs{grid-template-columns:1fr;gap:0}}
+  /* prices */
+  .prices{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pricegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+  .pricecard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px 24px;text-align:center;position:relative;transition:transform .18s,box-shadow .18s}
+  .pricecard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .pricecard.feat{border-color:var(--clay)}
+  .pbadge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--clay);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:40px;white-space:nowrap}
+  .pname{font-family:"Fraunces";font-weight:500;font-size:20px;color:var(--ink)}
+  .pamt{font-family:"Fraunces";font-weight:600;font-size:54px;color:var(--clay-dk);line-height:1;margin:12px 0 8px}
+  .pdesc{font-size:14px;color:var(--ink2)}
+  .valuebanner{margin-top:26px;text-align:center;background:var(--dark);color:#e8e0d1;border-radius:14px;padding:22px 26px;font-family:"Fraunces";font-weight:400;font-size:clamp(17px,2.4vw,21px);line-height:1.5}
+  .valuebanner s{color:#c67d63;text-decoration-thickness:2px}
+  .valuebanner b{color:#fbf7ee;font-weight:600}
+  @media(max-width:700px){.pricegrid{grid-template-columns:1fr}}
 
   /* about band (soft, light) */
   .about{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -144,7 +158,7 @@
   <a class="brand" href="#top"><b>Joe's Barber Shop</b><span>Springville, Utah</span></a>
   <div class="navlinks">
     <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
+    <a href="#prices">Prices</a>
     <a href="#visit">Visit</a>
     <a href="tel:+18013613941" class="book">Call to book</a>
   </div>
@@ -182,7 +196,37 @@
       <div class="svc"><div><div class="nm">Kids' Cut</div><div class="ds">Patient, easy cuts for the little ones.</div></div><div class="tx">All ages</div></div>
       <div class="svc"><div><div class="nm">Lineup &amp; Neck Trim</div><div class="ds">A quick cleanup to stay sharp.</div></div><div class="tx">Touch-up</div></div>
     </div>
-    <p class="menunote">Full menu and pricing confirmed with Joe — this is a sample layout.</p>
+    <p class="menunote">Simple, honest pricing — see what it costs below.</p>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section class="prices" id="prices">
+  <div class="wrap">
+    <div class="head center">
+      <div class="ey">Honest prices</div>
+      <h2>Straightforward — and a steal</h2>
+      <p>No surprises at the chair. Joe keeps it simple, and well below what most shops charge.</p>
+    </div>
+    <div class="pricegrid">
+      <div class="pricecard">
+        <div class="pname">Haircut</div>
+        <div class="pamt">$15</div>
+        <div class="pdesc">A clean, classic cut.</div>
+      </div>
+      <div class="pricecard feat">
+        <span class="pbadge">Most popular</span>
+        <div class="pname">Haircut + Beard</div>
+        <div class="pamt">$20</div>
+        <div class="pdesc">A cut plus a beard trim or shave.</div>
+      </div>
+      <div class="pricecard">
+        <div class="pname">Youth Cut</div>
+        <div class="pamt">$12</div>
+        <div class="pdesc">Ages 1–12.</div>
+      </div>
+    </div>
+    <div class="valuebanner">Most barbershops around here charge <s>$25–$40</s> for a cut. At Joe's, it's <b>$15</b> — same sharp cut, a whole lot less.</div>
   </div>
 </section>
 
