@@ -173,7 +173,7 @@
     <div class="ey" style="color:#cdb88f">Main Street · Springville</div>
     <h1>A good haircut,<br>and no fuss.</h1>
     <p class="tag">Joe's is a quiet, classic barbershop — a clean cut, a careful beard trim, and a chair that's always ready. Come as you are.</p>
-    <div class="meta"><span class="st">★★★★☆</span> <span>4.3 on Google</span> <span class="dot">·</span> <span>32 reviews</span></div>
+    <div class="meta"><span class="st">★★★★☆</span> <span><b data-gr-rating style="font-weight:600">4.3</b> on Google</span> <span class="dot">·</span> <span><b data-gr-reviews style="font-weight:600">32</b> reviews</span></div>
     <div class="herobtns">
       <a href="tel:+18013613941" class="btn btn-solid" style="background:#f3ede0;color:#2a2620">Call to book · (801) 361-3941</a>
     </div>
@@ -238,8 +238,8 @@
       <h2>Meet Joe</h2>
       <p>Joe keeps Springville looking sharp from his chair on Main Street — a quiet, classic shop, a clean cut, and an easy conversation if you're up for one. Sit down, relax, and leave looking your best. The neighbors keep coming back, and the reviews say the rest.</p>
       <div class="statrow">
-        <div class="stat"><b>4.3★</b><span>Google rating</span></div>
-        <div class="stat"><b>32</b><span>Reviews</span></div>
+        <div class="stat"><b><span data-gr-rating>4.3</span>★</b><span>Google rating</span></div>
+        <div class="stat"><b data-gr-reviews>32</b><span>Reviews</span></div>
         <div class="stat"><b>Walk-ins</b><span>Welcome</span></div>
       </div>
     </div>
@@ -321,6 +321,19 @@
   var nav=document.getElementById('nav');
   var onScroll=function(){ nav.classList.toggle('scrolled', window.scrollY>12); };
   onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Live Google rating — auto-updates from the shop's Google listing (cached ~6h)
+  (function(){
+    try{
+      fetch("https://cbzibwwplygnzmvexfrf.supabase.co/functions/v1/joes-rating")
+        .then(function(r){return r.json();})
+        .then(function(d){
+          if(!d) return;
+          if(d.rating!=null){ document.querySelectorAll("[data-gr-rating]").forEach(function(e){e.textContent=d.rating;}); }
+          if(d.reviews!=null){ document.querySelectorAll("[data-gr-reviews]").forEach(function(e){e.textContent=d.reviews;}); }
+        }).catch(function(){});
+    }catch(e){}
+  })();
 </script>
 </body>
 </html>
