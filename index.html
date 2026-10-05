@@ -112,6 +112,9 @@
   .greview{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-family:"Hanken Grotesk";font-weight:600;font-size:15px;
     color:var(--clay-dk);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:40px;padding:11px 20px;transition:background .2s,border-color .2s}
   .greview:hover{background:#fff;border-color:var(--clay)}
+  .grow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .greview.primary{color:#fff;background:var(--clay-dk);border-color:var(--clay-dk)}
+  .greview.primary:hover{background:var(--ink);border-color:var(--ink)}
   .mapwrap{margin-top:30px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:var(--shadow)}
   .gmap{width:100%;height:360px;border:0;display:block}
   @media(max-width:700px){.gmap{height:300px}}
@@ -248,7 +251,10 @@
         <div class="stat"><b data-gr-reviews>32</b><span>Reviews</span></div>
         <div class="stat"><b>Walk-ins</b><span>Welcome</span></div>
       </div>
-      <a href="https://www.google.com/maps?q=Joe%27s+Barber+Shop+655+S+Main+St+Springville+UT" target="_blank" rel="noopener" class="greview">★ Read our reviews on Google ↗</a>
+      <div class="grow">
+        <a href="https://search.google.com/local/writereview?placeid=ChIJRWnfM5u9TYcRVjWGqR4c58o" target="_blank" rel="noopener" class="greview primary">★ Leave us a review ↗</a>
+        <a href="https://www.google.com/maps?q=Joe%27s+Barber+Shop+655+S+Main+St+Springville+UT" target="_blank" rel="noopener" class="greview">Read reviews on Google ↗</a>
+      </div>
     </div>
     <div class="photo joephoto"><img src="assets/joe.jpg" alt="Joe, the barber, at his shop in Springville, Utah"></div>
   </div>
